@@ -1,17 +1,3 @@
-<!--
-  HTML
-
-  HyperText
-  é um texto com links
-
-  Markup
-  Tags/marcações
-  
-  Language
-  regras de uma linguagem
-
--->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,14 +22,14 @@
           </span>
           <img src="images/avatar.jpeg" alt="profile" />
         </div>
-        <h1>Gustavo Vicenzi</h1>
-        <a href="https://instagram.com/gusvicenzi">
+        <h1 id="userName">Gustavo Vicenzi</h1>
+        <a href="https://github.com/gusvicenzi" target="_blank">
           <img src="images/github.svg" alt="github" />
           gusvicenzi</a
         >
         <p>Aprendendo desenvolvimento web com HTML, CSS e Javascript</p>
-        <ul>
-          <li>
+        <ul id="socialLinks">
+          <li class="youtube">
             <a
               href="https://www.youtube.com/channel/UCurjjEKAmQiEaLllVZs_EHg"
               target="_blank"
@@ -51,17 +37,17 @@
               <img src="images/yt.svg" alt="youtube" />
             </a>
           </li>
-          <li>
+          <li class="instagram">
             <a href="https://www.instagram.com/gusvicenzi/" target="_blank">
               <img src="images/instagram.svg" alt="instagram" />
             </a>
           </li>
-          <li>
+          <li class="facebook">
             <a href="https://www.facebook.com/gustavovicenzi12" target="_blank">
               <img src="images/facebook.svg" alt="facebook" />
             </a>
           </li>
-          <li>
+          <li class="twitter">
             <a href="https://www.twitter.com/gusvicenzi" target="_blank">
               <img src="images/twitter.svg" alt="twitter" />
             </a>
@@ -69,5 +55,28 @@
         </ul>
       </div>
     </main>
+
+    <script>
+      const linksSocialMedia = {
+        github: 'gusvicenzi',
+        instagram: 'gusvicenzi',
+        youtube: 'UCurjjEKAmQiEaLllVZs_EHg',
+        facebook: 'gustavovicenzi12',
+        twitter: 'gusvicenzi'
+      };
+
+      function changeSocialMediaLinks() {
+        // document.getElementById('userName').textContent = user;
+        // userName.textContent = user;
+        for (let li of socialLinks.children) {
+          const social = li.getAttribute('class');
+          li.children[0].href = `https://${social}.com/${linksSocialMedia[social]}`;
+
+          // alert(li.children[0].href);
+        }
+      }
+
+      changeSocialMediaLinks();
+    </script>
   </body>
 </html>
