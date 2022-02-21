@@ -19,9 +19,10 @@ body {
 }
 
 main {
-  background: url(images/backgroung.svg);
-  width: 375px;
-  height: 812px;
+  background: url(images/background.svg) no-repeat center/cover;
+  width: 100vw;
+  min-height: 812px;
+  height: 100vh;
 }
 
 .container {
@@ -78,4 +79,26 @@ ul {
   display: flex;
   gap: 0.5rem;
   justify-content: center;
+}
+
+@media (min-width: 960px) {
+  main {
+    background: url(images/desktop.svg) no-repeat center/cover;
+    width: 100vw;
+    min-height: 812px;
+    height: 100vh;
+  }
+
+  #card-bg {
+    background: url(images/card-desktop.svg) no-repeat center/cover;
+    padding-top: 280px;
+    height: 640px;
+    width: 458px;
+    margin: auto;
+  }
+
+  .container {
+    position: relative;
+    top: -215px;
+  }
 }
